@@ -40,16 +40,16 @@
   background: #141;
 
   #main {
-    margin-left: 18em;
+    margin-left: 21em;
     padding: 1em;
     background: white;
   }
 
-/*START:side*/
+//#START:side
   #side {
     float: left;
     padding: 1em 2em;
-    width: 14em;
+    width: 16em;
     background: #141;
 
     form, div {
@@ -71,7 +71,6 @@
       }
     }
 
-
     ul {
       padding: 0;
 
@@ -85,5 +84,5 @@
       }
     }
   }
-/*END:side*/
+//#END:side
 }

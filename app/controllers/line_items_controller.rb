@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create]  # This line makes sure that a cart is created when the "Add to cart" button is pressed.
+  before_action :set_cart, only: [:create, :destroy]  # This line makes sure that a cart is created when the "Add to cart" button is pressed.
   before_action :set_line_item, only: [:show, :edit, :update, :destroy] # The generated controller already uses this facility to set the value of the @line_item instance variable before the show() , edit() , update(), or destroy() actions are called.
 
   # GET /line_items
@@ -61,7 +61,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to @cart }
       format.json { head :no_content }
     end
   end

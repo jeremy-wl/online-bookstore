@@ -7,4 +7,9 @@ class Product < ActiveRecord::Base
 		message: 'must be a URL for GIF, JPG or PNG image'
 	}
 	validates :price, numericality: { greater_than_or_equal_to: 0.01 }
+
+	def self.latest
+		Product.order(:updated_at).last  # Defined for the caching in store index
+	end
+
 end

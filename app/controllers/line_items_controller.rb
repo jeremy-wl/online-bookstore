@@ -27,11 +27,13 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     product = Product.find(params[:product_id]) # use the params object to get the :product_id parameter from the request
-    @line_item = @cart.line_items.build(product: product) # This causes a new line item relationship to be built between the @cart object and the product. You can build the relationship from either end, and Rails will take care of establishing the connections on both sides. We save the resulting line item into an instance variable named @line_item. NOT FULLY UNDERSTOOD!
+    @line_item = @cart.add_product(product.id)  # @cart comes from set_cart, and @line_item comes from set_line_item created by default
+
+    #@line_item = @cart.line_items.build(product: product)  # This causes a new line item relationship to be built between the @cart object and the product. You can build the relationship from either end, and Rails will take care of establishing the connections on both sides. We save the resulting line item into an instance variable named @line_item. NOT FULLY UNDERSTOOD!
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
+        format.html { redirect_to @line_item.cart }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -72,6 +74,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:product_id, :cart_id)
+      params.require(:line_item).permit(:product_id)
     end
 end

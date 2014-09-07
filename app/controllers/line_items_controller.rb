@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  skip_before_action :authorize, only: :create
   include CurrentCart
   before_action :set_cart, only: [:create, :destroy]  # This line makes sure that a cart is created when the "Add to cart" button is pressed.
   before_action :set_line_item, only: [:show, :edit, :update, :destroy] # The generated controller already uses this facility to set the value of the @line_item instance variable before the show() , edit() , update(), or destroy() actions are called.

@@ -10,17 +10,22 @@ Rails.application.routes.draw do
 
   resources :users
 
+scope '(:locale)' do # :locale is in parentheses, which is the way to say that it is optional
+
   resources :orders
 
   resources :line_items
 
   resources :carts
 
+  root 'store#index', as: 'store'
+
+end
+
   get 'store/index'
 
   resources :products
 
-  root 'store#index', as: 'store'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -20,4 +20,49 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  check:           "Check"
+  credit:          "Credit Card"
+  purchase:        "Purchase Order"
+  thanks:          "Thank you for your order!"
+  emtpy:           "Your cart is empty."
+
+  layouts:
+    application:
+      title:       "Jeremy's Online Bookstore"
+      home:        "Home"
+      questions:   "Questions"
+      news:        "News"
+      contact:     "Contact"
+  
+  store:
+    index:
+      title_list:   "Your bookstore Catalog"
+      btn_add:      "Add to cart"
+
+  carts:
+    cart:
+      title_cart:   "Your shopping cart"
+      total:        "Total"
+      empty:        "Empty"
+      sure:         "Are you sure to empty the cart?"
+      checkout:     "Checkout"
+      back:         "back"
+
+  orders:
+    form:
+      name:         "Name"
+      address:      "Address"
+      email:        "Email"
+      pay_type:     "Pay type"
+      pay_prompt:   "Select a payment method"
+      submit:       "Place order"
+
+    new:
+      legend:       "Please Enter Your Details"
+
+  errors:
+    template:
+      header:
+        one:       "1 error prohibited %{model} from being created:"
+        other:     "%{count} errors prohibited %{model} from being created:"

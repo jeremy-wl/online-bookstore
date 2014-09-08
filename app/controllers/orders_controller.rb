@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     if @cart.line_items.empty?
-      redirect_to store_url, notice: "Your cart is empty."
+      redirect_to store_url, notice: t(".empty")
       return # without it you will get a double render error because your controller will attempt to both redirect and render output.
     end
 
@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
         OrderNotifier.shipped(@order).deliver
 
-        format.html { redirect_to store_url, notice: 'Thank you for your order.' }
+        format.html { redirect_to store_url, notice: t(".thanks") }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }

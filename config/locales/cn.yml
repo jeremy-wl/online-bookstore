@@ -1,0 +1,83 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+cn:
+
+  check:           "支票"
+  credit:          "信用卡"
+  purchase:        "支付宝"
+  thanks:          "感谢您购买我们的产品！"
+  empty:           "您的购物车还是空的哦。"
+
+  layouts:
+    application:
+      title:       "Jeremy的网上书店"
+      home:        "主页"
+      questions:   "Q & A"
+      news:        "新闻"
+      contact:     "联系我们"
+
+  store:
+    index:
+      title_list:  "商品列表"
+      btn_add:     "加入购物车"
+
+  carts:
+    cart:
+      title_cart:   "您的购物车"
+      total:        "总计"
+      empty:        "清空购物车"
+      sure:         "你确定要清空购物车吗？"
+      checkout:     "结算"
+      back:         "后退"
+
+  orders:
+    form:
+      name:         "姓名"
+      address:      "地址"
+      email:        "邮箱"
+      pay_type:     "付款方式"
+      pay_prompt:   "请选择一种付款方式"
+      submit:       "确认交易"
+
+    new:
+      legend:       "请输入您的信息"
+
+  activerecord:
+    models:
+      order:       "订单"
+    attributes:
+      order:
+        address:   "地址"
+        name:      "姓名"
+        email:     "邮箱"
+        pay_type:  "付款方式"
+
+    errors:
+      messages:
+        inclusion: "请选择一种付款方式。"
+        blank:     "不能为空。"
+  errors:
+    template:
+      body:        "出现了下列错误："
+      header:
+        one:       "出现了1个错误，请更正%{model}"
+        other:     "出现了个%{count}错误，请更正%{model}"

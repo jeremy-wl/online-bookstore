@@ -24,7 +24,6 @@ cn:
   check:           "支票"
   credit:          "信用卡"
   purchase:        "支付宝"
-  thanks:          "感谢您购买我们的产品！"
   empty:           "您的购物车还是空的哦。"
 
   layouts:
@@ -57,6 +56,9 @@ cn:
       pay_type:     "付款方式"
       pay_prompt:   "请选择一种付款方式"
       submit:       "确认交易"
+
+    create:
+      thanks:      "感谢您购买我们的产品！"
 
     new:
       legend:       "请输入您的信息"

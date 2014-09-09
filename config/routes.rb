@@ -26,6 +26,10 @@ end
 
   resources :products
 
+  controller :store do
+    post "/cn" => :index 
+    post "/en" => :index
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

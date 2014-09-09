@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-  skip_before_action :authorize, only: :create
+  skip_before_action :authorize, only: [:create, :destroy]
   include CurrentCart
   before_action :set_cart, only: [:create, :destroy]  # This line makes sure that a cart is created when the "Add to cart" button is pressed.
   before_action :set_line_item, only: [:show, :edit, :update, :destroy] # The generated controller already uses this facility to set the value of the @line_item instance variable before the show() , edit() , update(), or destroy() actions are called.
@@ -63,7 +63,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to store_url, notice: 'The item is removed.' }
+      format.html { redirect_to store_url }
       format.json { head :no_content }
       format.js
     end

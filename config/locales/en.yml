@@ -24,7 +24,6 @@ en:
   check:           "Check"
   credit:          "Credit Card"
   purchase:        "Purchase Order"
-  thanks:          "Thank you for your order!"
   emtpy:           "Your cart is empty."
 
   layouts:
@@ -57,6 +56,9 @@ en:
       pay_type:     "Pay type"
       pay_prompt:   "Select a payment method"
       submit:       "Place order"
+
+    create:
+      thanks:      "Thank you for your order!"
 
     new:
       legend:       "Please Enter Your Details"

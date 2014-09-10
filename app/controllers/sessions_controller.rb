@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-	skip_before_action :authorize
   def new
   	if session[:user_id]
   		redirect_to store_url

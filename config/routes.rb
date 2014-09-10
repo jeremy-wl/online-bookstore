@@ -1,17 +1,4 @@
 Rails.application.routes.draw do
-  get 'admin' => "admin#index"
-
-  controller :sessions do
-    get    "login"  => :new
-    post   "login"  => :create
-    delete "logout" => :destroy   # works for entering the url
-    get    "logout" => :destroy   # works for clicking the button
-  end
-
-  resources :users
-
-  match '/signup',   to: "users#new",    via:'get'
-  match '/signin',   to: "session#new",    via:'get'
 
 scope '(:locale)' do # :locale is in parentheses, which is the way to say that it is optional
 

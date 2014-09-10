@@ -1,0 +1,29 @@
+<header class="home">
+  <nav>
+    <div id="banner">
+      
+      <%= link_to image_tag("logo.png", :height => "45"), store_path %>
+
+      <% if @order.nil? %>
+        <%= form_tag store_path, class: 'locale' do %>
+          <%= select_tag 'set_locale', 
+            options_for_select(LANGUAGES, I18n.locale.to_s),
+                      onchange: 'this.form.submit()', class: 'form-control' %>
+          <%= submit_tag 'submit' %>
+          <%= javascript_tag "$('.locale input').hide()" %>
+        <% end %>
+      <% end %>
+
+        <ul>
+          <li><%= link_to t(".home"), store_url %></li>
+          <li><a href="http://www..../faq"><%= t(".questions") %></a></li>
+          <li><a href="http://www..../news"><%= t(".news") %></a></li>
+          <li><a href="http://www..../contact"><%= t(".contact") %></a></li>
+          <li><%= link_to t(".cart"), @cart %></li>
+          <div id="debug"><%= debug(params) if Rails.env.development? %></div>
+
+        </ul>
+    </div>
+
+  </nav>
+</header>

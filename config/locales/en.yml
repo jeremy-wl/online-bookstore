@@ -28,12 +28,14 @@ en:
 
   layouts:
     application:
-      title:       "Jeremy's Online Bookstore"
       home:        "Home"
       questions:   "Questions"
       news:        "News"
       contact:     "Contact"
   
+    header:
+      title:       "Jeremy's Online Bookstore"
+
   store:
     index:
       title_list:   "Your bookstore Catalog"

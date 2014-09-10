@@ -28,11 +28,13 @@ cn:
 
   layouts:
     application:
-      title:       "Jeremy的网上书店"
       home:        "主页"
       questions:   "Q & A"
       news:        "新闻"
       contact:     "联系我们"
+
+    header:
+      title:       "Jeremy的网上书店"
 
   store:
     index:

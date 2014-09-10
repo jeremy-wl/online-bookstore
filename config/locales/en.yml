@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-
+  
   check:           "Check"
   credit:          "Credit Card"
   purchase:        "Purchase Order"
@@ -33,6 +33,9 @@ en:
       questions:   "Questions"
       news:        "News"
       contact:     "Contact"
+
+    header:
+      cart:        "My Cart"
   
   store:
     index:
@@ -40,7 +43,7 @@ en:
       btn_add:      "Add to cart"
 
   carts:
-    cart:
+    show:
       title_cart:   "Your shopping cart"
       total:        "Total"
       empty:        "Empty"

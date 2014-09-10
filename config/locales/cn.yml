@@ -27,7 +27,7 @@ cn:
   empty:           "您的购物车还是空的哦。"
 
   layouts:
-    application:
+    header:
       title:       "Jeremy的网上书店"
       home:        "主页"
       questions:   "Q & A"

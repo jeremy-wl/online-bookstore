@@ -31,6 +31,10 @@ end
     post "/en" => :index
   end
 
+  controller :carts do
+    get "/cart" => :index
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

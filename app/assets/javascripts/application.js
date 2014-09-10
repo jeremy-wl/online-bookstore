@@ -15,3 +15,12 @@
 //= require jquery-ui/effect-blind
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.slider1').bxSlider({
+    slideWidth: 350,
+    minSlides: 3,
+    maxSlides: 3,
+    slideMargin: 10
+  });
+});

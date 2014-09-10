@@ -2,6 +2,16 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
+
+  <ul class="slider1">
+    <% Product.all.each do |product| %>
+          <li><%= image_tag(product.image_url, class:"slide") %></li>
+          <li><%= image_tag(product.image_url, class:"slide") %></li>
+          <li><%= image_tag(product.image_url, class:"slide") %></li>
+    <% end %>
+  </ul>
+
+
 <h1><%= t('.title_list') %></h1>
 
   <% @products.each do |product| %>

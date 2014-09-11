@@ -9,12 +9,18 @@ Rails.application.routes.draw do
   resources :carts
   
   resources :products
-  
-scope '(:locale)' do # :locale is in parentheses, which is the way to say that it is optional
 
-  root 'store#index', as: 'store'
+  # get "/users"  
 
-end
+  devise_scope :user do
+    get "/users" => "my_users#index", as: "users"
+  end
+
+  scope '(:locale)' do # :locale is in parentheses, which is the way to say that it is optional
+
+    root 'store#index', as: 'store'
+
+  end
 
   get 'store/index'
 

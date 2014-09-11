@@ -36,6 +36,8 @@ gem 'pg'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+gem 'devise'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

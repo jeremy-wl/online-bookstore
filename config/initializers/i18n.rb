@@ -1,5 +1,5 @@
 #encoding: utf-8
-I18n.default_locale = :cn
+I18n.default_locale = :en
 
 LANGUAGES = [
   ['English',          'en'],

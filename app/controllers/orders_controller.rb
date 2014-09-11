@@ -1,14 +1,18 @@
 class OrdersController < ApplicationController
+  load_and_authorize_resource
   include CurrentCart
   before_action :set_cart,  only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :set_user
 
 
   # GET /orders
   # GET /orders.json
   def index
-    @orders = current_user.orders
+    if current_user.admin?
+      @orders = Order.all
+    else
+      @orders = current_user.orders
+    end
   end
 
   # GET /orders/1
@@ -87,7 +91,4 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:name, :address, :email, :pay_type)
     end
 
-    def set_user
-      current_user
-    end
 end

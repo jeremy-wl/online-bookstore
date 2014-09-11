@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # get "/users"  
 
   devise_scope :user do
-    get "/users" => "my_users#index", as: "users"
+    get "/users" => "users#index"
   end
 
   scope '(:locale)' do # :locale is in parentheses, which is the way to say that it is optional

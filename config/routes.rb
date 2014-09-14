@@ -1,16 +1,6 @@
 Rails.application.routes.draw do
-  get 'admin' => "admin#index"
 
-  controller :sessions do
-    get    "login"  => :new
-    post   "login"  => :create
-    delete "logout" => :destroy   # works for entering the url
-    get    "logout" => :destroy   # works for clicking the button
-  end
-
-  resources :users
-
-scope '(:locale)' do # :locale is in parentheses, which is the way to say that it is optional
+  devise_for :users
 
   resources :orders
 
@@ -20,14 +10,22 @@ scope '(:locale)' do # :locale is in parentheses, which is the way to say that i
   
   resources :products
 
-  root 'store#index', as: 'store'
+  # get "/users"  
 
-end
+  devise_scope :user do
+    get "/users" => "users#index"
+  end
+
+  scope '(:locale)' do # :locale is in parentheses, which is the way to say that it is optional
+
+    root 'store#index', as: 'store'
+
+  end
 
   get 'store/index'
 
   controller :store do
-    post "/cn" => :index 
+    post "/cn" => :index
     post "/en" => :index
   end
 

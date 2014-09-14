@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :authorize, only: [:new, :create]
+  load_and_authorize_resource
   include CurrentCart
   before_action :set_cart,  only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
@@ -8,7 +8,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    if current_user.admin?
+      @orders = Order.all
+    else
+      @orders = current_user.orders
+    end
   end
 
   # GET /orders/1
@@ -35,6 +39,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
+    @order.user_id = current_user.id
 
     respond_to do |format|
       if @order.save
@@ -85,4 +90,5 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:name, :address, :email, :pay_type)
     end
+
 end

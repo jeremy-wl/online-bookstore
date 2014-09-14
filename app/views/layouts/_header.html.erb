@@ -1,0 +1,22 @@
+<div id="banner">
+
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you? 
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", user_session_path %>
+  <% end %>
+
+  <% if @order.nil? %>
+    <%= form_tag store_path, class: 'locale' do %>
+      <%= select_tag 'set_locale', 
+        options_for_select(LANGUAGES, I18n.locale.to_s),
+                                      onchange: 'this.form.submit()' %>
+      <%= submit_tag 'submit' %>
+      <%= javascript_tag "$('.locale input').hide()" %>
+    <% end %>
+  <% end %>
+
+  <%= link_to image_tag("logo.png", :height => "45"), store_path %>
+  <%= @page_title || t(".title") %>
+</div>

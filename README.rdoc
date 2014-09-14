@@ -3,5 +3,3 @@ This is an E-Commerce Rails App based on the sample app in Agile Web Development
 =========================================
 
 SITE DEVELOPMENT IN PROGRESS
-
-Please checkout the messing-around branch

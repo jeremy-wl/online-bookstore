@@ -1,0 +1,13 @@
+<% @categories.each do |category| %>
+	<ul>
+	  <li>
+	  	<b><%= category.name %></b>&nbsp;
+	  	<%= link_to "Edit", edit_category_path(category) %>&nbsp;
+	  	<%= link_to "Destroy", category, data: { confirm: "Are you sure?" }, method: :delete %></b><br />
+		<% category.products.each do |product| %>
+			<%=  product.title %><br />
+		<% end %>
+	  </li>
+	</ul>
+<% end %>
+<%= link_to "Create new category", categories_new_path %>

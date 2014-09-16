@@ -20,14 +20,18 @@
     <%= f.label :description %><br>
     <%= f.text_area :description, rows: 6 %>
   </div>
-  <div class="field">
 
+  <div class="field">
+    <%= hidden_field_tag "product[category_ids][]", nil %>
     <% for category in Category.all %>
       <%= check_box_tag "product[category_ids][]",category.id, 
-      @product.categories.include?(category) %>
-      <%= category.name %>
+      @product.categories.include?(category), id: dom_id(category) %> <!-- No checkbox will be submitted if nothing's checked, that's why all the checks stay right there even if all are unchecked before submitting. That's why a hidden_field_tag is needed to make it default if nothing's checked. -->
+
+      <!-- dom_id(category) is used to assign categories ids in the html form -->
+      <%= label_tag dom_id(category), category.name %><br />
     <% end %>
   </div>
+  
   <div class="field">
     <%= f.label :image_url %><br>
     <%= f.text_field :image_url %>

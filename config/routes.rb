@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'categories/new'
+
+  controller :categories do
+    post "/categories" => :create
+    get "/categories" => :index
+  end
+
+  resources :categories
+
   devise_for :users
 
   resources :orders

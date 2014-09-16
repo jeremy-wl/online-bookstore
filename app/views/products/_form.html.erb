@@ -21,6 +21,14 @@
     <%= f.text_area :description, rows: 6 %>
   </div>
   <div class="field">
+
+    <% for category in Category.all %>
+      <%= check_box_tag "product[category_ids][]",category.id, 
+      @product.categories.include?(category) %>
+      <%= category.name %>
+    <% end %>
+  </div>
+  <div class="field">
     <%= f.label :image_url %><br>
     <%= f.text_field :image_url %>
   </div>

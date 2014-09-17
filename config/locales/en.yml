@@ -42,7 +42,7 @@ en:
       btn_add:     "Add to cart"
 
   carts:
-    cart:
+    show:
       title_cart:   "Your shopping cart"
       total:        "Total"
       empty:        "Empty"

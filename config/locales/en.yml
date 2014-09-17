@@ -39,7 +39,7 @@ en:
   store:
     index:
       title_list:   "Your bookstore Catalog"
-      btn_add:      "Add to cart"
+      btn_add:     "Add to cart"
 
   carts:
     cart:
@@ -70,3 +70,7 @@ en:
       header:
         one:       "1 error prohibited %{model} from being created:"
         other:     "%{count} errors prohibited %{model} from being created:"
+  products:
+    show:
+      btn_add:     "Add to cart"
+    

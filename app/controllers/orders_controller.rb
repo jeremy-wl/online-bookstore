@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   load_and_authorize_resource
   include CurrentCart
   before_action :set_cart,  only: [:new, :create]
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :destroy]
 
 
   # GET /orders
@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
-    @order.user_id = current_user.id
+    @order.user_id = current_user.id if user_signed_in?
 
     respond_to do |format|
       if @order.save

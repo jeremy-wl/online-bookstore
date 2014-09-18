@@ -38,7 +38,8 @@ gem 'bcrypt'
 
 gem 'devise'
 
-gem "cancan"
+#gem "cancan"
+gem 'cancancan'
 
 # Use unicorn as the app server
 # gem 'unicorn'

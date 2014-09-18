@@ -30,10 +30,16 @@
         <th>Products Ordered</th>
         <%= render order.line_items %>
       </tr>
+      <tr>
+        <th>Ordered at</th>
+        <td><%= order.created_at %></td>
+      </tr>
+        <% if current_user.admin? %>
+          <td><%= link_to 'Show', order %></td>
+          <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <% end %>
 
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %><br><br></td>
       </tr>
     <% end %>
   </tbody>

@@ -20,4 +20,8 @@
   <%= link_to image_tag("logo.png", :height => "45"), store_path %>
   <%= @page_title || t(".title") %>
   <%= link_to "My cart", @cart %>
+  <%= link_to "Checkout", new_order_path, method: :get %>
+  <% if @cart %>
+    <%= number_to_currency(@cart.total_price) %>
+  <% end %>
 </div>

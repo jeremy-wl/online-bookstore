@@ -1,19 +1,27 @@
-<h2><%= t(".title_cart") %></h2>
-<table width="100%">
-	<%= render @cart.line_items %> <!-- This renders the _line_item.html.erb template in views/line_items/  -->
-	<tr class="total_line">
-		<td colspan="2"><%= t(".total") %></td>
-		<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-	</tr>
-</table>
+<% if @cart %> 
+  <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+	<h2><%= t(".title_cart") %></h2>
+	<table width="100%">
+		<%= render @cart.line_items %> <!-- This renders the _line_item.html.erb template in views/line_items/  -->
+		<tr class="total_line">
+			<td colspan="2"><%= t(".total") %></td>
+			<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+		</tr>
+	</table>
 
-<% if @order.nil? %>
-	<%= button_to t('.empty'), @cart, method: :delete, 
-							data: { confirm: t(".sure") }, remote: true %>
+	<% if @order.nil? %>
+		<%= button_to t('.empty'), @cart, method: :delete, 
+				data: { confirm: t(".sure") }, remote: true %>
 
-<!-- When those is put in the template of the same name with the folder, @cart should be changed to cart -->
+	<!-- When those is put in the template of the same name with the folder, @cart should be changed to cart -->
 
-	<%= button_to t('.checkout'), new_order_path, method: :get %>
-<% else %>
-	<%= link_to t('.back'), store_url %>
+		<%= button_to t('.checkout'), new_order_path, method: :get %>
+	<% else %>
+		<%= link_to t('.back'), store_url %>
+	<% end %>
+  <% end %>
+<% end %>
+
+<% if @cart.line_items.empty? %>
+	<p>Your cart is currently empty.</p>
 <% end %>

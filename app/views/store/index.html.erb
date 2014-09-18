@@ -2,12 +2,11 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-    <% if @cart %> 
-      <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-        <%= render template: "carts/show" %>
-      <% end %>
-    <% end %>
-
+<% if @cart %> 
+  <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+    <%= render template: "carts/show" %>
+  <% end %>
+<% end %>
 
 <h1><%= t('.title_list') %></h1>
 

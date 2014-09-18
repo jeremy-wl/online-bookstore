@@ -8,6 +8,7 @@ class Ability
     else
        can :manage, Order
        can :read, Category
+       can :read, Product
     end
 
     # Define abilities for the passed in user here. For example:

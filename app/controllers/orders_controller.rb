@@ -43,8 +43,13 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
+        if user_signed_in?
+          Cart.destroy(current_user.cart)
+        else
+          Cart.destroy(session[:cart_id])
+          session[:cart_id] = nil
+        end
+        
         OrderNotifier.shipped(@order).deliver
 
         format.html { redirect_to store_url, notice: t(".thanks") }

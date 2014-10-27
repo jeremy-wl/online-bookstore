@@ -6,7 +6,14 @@
 
   <%= stylesheet_link_tag    "application", media: "all",
     "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "bootstrap", media: "all",
+    "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "bootstrap-responsive", media: "all",
+    "data-turbolinks-track" => true %>
+
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "bootstrap", "data-turbolinks-track" => true %>
+
   <%= csrf_meta_tags %>
 
 </head>
@@ -16,7 +23,7 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<div style="position:fixed;width:auto;margin-top:400px"><%= debug(params) if Rails.env.development? %></div>
+<!-- <div style="position:fixed;width:auto;margin-top:400px"><%= debug(params) if Rails.env.development? %></div> -->
 
 <header>
   <%= render "layouts/header" %>

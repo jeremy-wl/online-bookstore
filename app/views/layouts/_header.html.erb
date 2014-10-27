@@ -1,3 +1,5 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+
 <div id="banner">
 
   <% if user_signed_in? %>
@@ -24,4 +26,7 @@
   <% if @cart %>
     <div id="sum"><%= number_to_currency(@cart.total_price) %></div>
   <% end %>
+</div>
+
+
 </div>

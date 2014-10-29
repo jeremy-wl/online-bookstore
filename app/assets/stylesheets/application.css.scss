@@ -17,11 +17,11 @@
 #banner {
 
 
-//   padding: 10px;
+  padding: 10px;
 //   border-bottom: 2px solid;
-//   // font: small-caps 40px/40px "Times New Roman", serif;
+  // font: small-caps 40px/40px "Times New Roman", serif;
   color: #FFF;
-//   text-align: center;
+  text-align: center;
 
   img {
     float: left;
@@ -76,9 +76,17 @@
 //#END:form
 
 /* START:i18n */
-.locale {
+select#set_locale {
   float: right;
-  margin: -0.25em 0.1em;
+  margin: 0.25 0.5em;
+  position: fixed;
+  right:1px;
+  top:8px;
+  width:90px;
+}
+
+#sum {
+  color:#FFF;
 }
 /* END:i18n */
 

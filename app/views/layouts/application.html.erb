@@ -20,8 +20,8 @@
 
 <body class="<%= controller.controller_name %>">
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<!-- <p class="notice"><%= notice %></p> -->
+<!-- <p class="alert"><%= alert %></p> -->
 
 <!-- <div style="position:fixed;width:auto;margin-top:400px"><%= debug(params) if Rails.env.development? %></div> -->
 
@@ -36,24 +36,7 @@
         <li><a href="http://www..../news"><%= t(".news") %></a></li>
         <li><a href="http://www..../contact"><%= t(".contact") %></a></li>
       </ul>
-        <ul>
-          <% if user_signed_in? %>
-            <% if current_user.try(:admin?) %>
-              <li><%= link_to "All Orders", orders_path %></li>
-            <% elsif user_signed_in? %>
-              <li><%= link_to "My Orders", orders_path %></li>
-            <% end %>
 
-            <% if current_user.try(:admin?) %>
-              <li><%= link_to "Products", products_path %></li>
-            <% end %>
-            
-            <% if current_user.try(:admin?) %>
-              <li><%= link_to "All Users", users_path %></li>
-            <% end %>
-          <% end %>
-              <li><%= link_to "Categories", categories_path %></li>
-        </ul>
 
 <!-- @cart is apparently nil when we display an index of our products. Thatmakes sense, because it is set only in the store controller.  All we need to do is avoid displaying the cart at all unless this value is set. -->
     </div>

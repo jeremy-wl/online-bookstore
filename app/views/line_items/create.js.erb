@@ -4,7 +4,9 @@ if ($('#cart tr').length == 1) { $('#cart').show('blind'); 100}
 
 $('#cart').html("<%= escape_javascript render(:template => 'carts/show') %>");
 
-$('#current_item').css({'background-color':'#88ff88'}).
-	animate({'background-color':'#114411'}, 1500);
+$('#current_item').css({'background-color':'#B8B8B8'}).
+	animate({'background-color':"#F0F0F0"}, 1500);
 
 $('#sum').html("<%= number_to_currency(@cart.total_price) %>") // Ajaxify the sum in the banner
+
+$('.badge').html(<%= @cart.line_items.count %>)

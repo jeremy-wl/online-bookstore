@@ -21,3 +21,8 @@ doc/app
 *.swp
 *~
 .DS_Store
+/.idea
+app/views/dev_debugger/*
+/app/views/dev_debugger
+/app/controllers/dev_debugger_controller.rb
+

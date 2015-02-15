@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  include CurrentCart
+  before_action :set_cart,  only: [:index]
   load_and_authorize_resource
   def new
   	@category = Category.new

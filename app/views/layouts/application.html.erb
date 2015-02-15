@@ -24,26 +24,34 @@
 <!-- <p class="alert"><%= alert %></p> -->
 
 <!-- <div style="position:fixed;width:auto;margin-top:400px"><%= debug(params) if Rails.env.development? %></div> -->
-
-<header>
-  <%= render "layouts/header" %>
-</header>
-  <div id="columns">
-    <div id="side">
-      <ul>
-        <li><%= link_to t(".home"), store_path %></li>
-        <li><a href="http://www..../faq"><%= t(".questions") %></a></li>
-        <li><a href="http://www..../news"><%= t(".news") %></a></li>
-        <li><a href="http://www..../contact"><%= t(".contact") %></a></li>
-      </ul>
+<div id="globalContainer" style="margin-top: 65px"> <!-- pull the div down so that the nav bar won't cover it -->
+    <header>
+      <%= render "layouts/header" %>
+    </header>
+      <div id="columns">
+        <div id="side">
 
 
-<!-- @cart is apparently nil when we display an index of our products. Thatmakes sense, because it is set only in the store controller.  All we need to do is avoid displaying the cart at all unless this value is set. -->
-    </div>
+    <!-- @cart is apparently nil when we display an index of our products. Thatmakes sense, because it is set only in the store controller.  All we need to do is avoid displaying the cart at all unless this value is set. -->
+        </div>
 
-    <div id="main">
-      <%= yield %>
-    </div>
-  </div>
+        <div id="main">
+          <%= yield %>
+        </div>
+      </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    var activateActiveClass = function() {
+        var regex = /users|product|categories/i;
+        var url = document.URL;
+        if (regex.exec(url)) {
+            var column = regex.exec(url)[0];
+            $("li:contains(" + column + ")").addClass("active");
+        }
+    }
+    activateActiveClass();
+</script>
+
 </body>
 </html>

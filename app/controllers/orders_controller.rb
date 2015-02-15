@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   load_and_authorize_resource
   include CurrentCart
-  before_action :set_cart,  only: [:new, :create]
+  before_action :set_cart,  only: [:new, :create, :index]
   before_action :set_order, only: [:show, :destroy]
 
 

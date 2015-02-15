@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   get 'categories/new'
 
+  controller :dev_debugger do
+    get '/debugger' => 'dev_debugger#index'
+  end
+
   controller :categories do
     post "/categories" => :create
     get "/categories" => :index

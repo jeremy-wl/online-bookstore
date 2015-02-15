@@ -1,0 +1,9 @@
+<footer align='center'>
+  <%
+     language = 'English' if I18n.locale == :cn
+     language = 'Chinese' if I18n.locale == :en
+  %>
+
+  <%= link_to language %> | Jeremy Wong All Rights Reserved
+
+</footer>

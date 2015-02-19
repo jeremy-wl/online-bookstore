@@ -13,7 +13,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav" id='columns'>
+      <ul class="nav navbar-nav columns">
         <li><%= link_to 'Products', products_path %></li>
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
@@ -34,7 +34,7 @@
 
       <!--<%= a = "#{render 'layouts/footer'}".gsub!("\"", '\'') %>-->
 
-      <ul class='nav navbar-nav navbar-right'>
+      <ul class='nav navbar-nav navbar-right columns'>
         <li data-container="body" title="My Shopping Cart" data-html="true" data-toggle="popover" data-placement="bottom"
             data-content=''>
           <%= link_to do %>
@@ -48,7 +48,7 @@
           <% end %>
         </li>
         <% if @cart %>
-            <li><a id="sum"><b><%= number_to_currency(@cart.total_price) %></b></a></li>
+            <li id="sum"><a><b><%= number_to_currency(@cart.total_price) %></b></a></li>
         <% end %>
         <li><%= link_to 'Checkout', new_order_path, method: :get %></li>
 <% if user_signed_in? %>
@@ -66,7 +66,9 @@
         </li>
 
 <% else %>
-        <li><%= link_to "Sign in", user_session_path %></li>
+        <li>
+          <a style="cursor:pointer;" data-toggle="modal" data-target="#signInModel">Sign in</a>
+        </li>
         <li>
           <%= link_to "Sign up", new_user_registration_path %>
         </li>
@@ -76,3 +78,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<!-- Sign in Modal Template-->
+<%= render template: 'modals/sign_in.html.erb' %>

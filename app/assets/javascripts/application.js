@@ -34,7 +34,7 @@ var toggleActiveClass = function() {
 
 var toggleCartOnMouseEvents = function() {
     $("[data-toggle=popover]").hover(function() {
-        $(this).popover('toggle');
+        $(this).popover('show');
     });
 };
 

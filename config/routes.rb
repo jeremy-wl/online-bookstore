@@ -19,7 +19,11 @@ Rails.application.routes.draw do
 
   resources :line_items
 
-  resources :carts
+  resources :carts, :except => [:index]
+
+  controller :carts do
+    get '/cart' => :index
+  end
   
   resources :products
 

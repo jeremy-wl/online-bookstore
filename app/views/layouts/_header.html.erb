@@ -32,8 +32,11 @@
         </div><!-- /input-group -->
       </form>
 
+      <!--<%= a = "#{render 'layouts/footer'}".gsub!("\"", '\'') %>-->
+
       <ul class='nav navbar-nav navbar-right'>
-        <li data-container="body" title="My Shopping Cart" data-html=true data-toggle="popover" data-placement="bottom" data-content="<b>Hello World!!</b>">
+        <li data-container="body" title="My Shopping Cart" data-html="true" data-toggle="popover" data-placement="bottom"
+            data-content=''>
           <%= link_to do %>
               My Cart
               <% if @cart %>

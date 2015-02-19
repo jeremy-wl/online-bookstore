@@ -1,23 +1,18 @@
-<h1>Listing carts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @carts.each do |cart| %>
+<table border="1" class="table table-striped">
+  <% @line_items.each do |line_item| %>
+      <% @the_product = Product.find(line_item.product_id) %>
       <tr>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td rowspan="2">
+          <%= link_to image_tag(@the_product.image_url, size: '50') %>
+        </td>
+        <td>
+          <%= @the_product.title %>
+        </td>
       </tr>
-    <% end %>
-  </tbody>
+      <tr>
+        <td>
+          Quantity: <%= line_item.quantity %>
+        </td>
+      </tr>
+  <% end %>
 </table>
-
-<br>
-
-<%= link_to 'New Cart', new_cart_path %>

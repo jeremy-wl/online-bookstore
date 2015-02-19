@@ -70,7 +70,7 @@
           <a style="cursor:pointer;" data-toggle="modal" data-target="#signInModel">Sign in</a>
         </li>
         <li>
-          <%= link_to "Sign up", new_user_registration_path %>
+          <a style="cursor:pointer;" data-toggle="modal" data-target="#signUpModel">Sign up</a>
         </li>
 <% end %>  <!-- end user_signed_in? -->
 
@@ -81,3 +81,5 @@
 
 <!-- Sign in Modal Template-->
 <%= render template: 'modals/sign_in.html.erb' %>
+<!-- Sign up Modal Template-->
+<%= render template: 'modals/sign_up.html.erb' %>

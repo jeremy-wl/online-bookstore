@@ -2,24 +2,4 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<% if @cart %> 
-  <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-    <%= render template: "carts/show" %>
-  <% end %>
-<% end %>
-
-<h1><%= t('.title_list') %></h1>
-
-  <% @products.each do |product| %>
-      <div class="entry">
-        <%= image_tag(product.image_url) %>
-        <h3><%= product.title %></h3>
-        <div class="price_line">
-          <span class="price"><%= number_to_currency(product.price) %></span>
-          <%= link_to "View details", product %>
-          <%= button_to t('.btn_add'), line_items_path(product_id: product.id), class: 'add_button', remote: true %>
-        </div>
-      </div>
-  <% end %>
-
 <%= render 'layouts/footer' %>

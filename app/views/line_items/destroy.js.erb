@@ -2,6 +2,6 @@ if ( <%= @cart.line_items.empty? %> ) { $('#cart').hide('blind', 1000); }
 
 $('#cart').html("<%= escape_javascript render(:template => 'carts/show') %>");
 
-$('#sum').html("<%= number_to_currency(@cart.total_price) %>")
+$('#sum a').html("<b><%= number_to_currency(@cart.total_price) %></b>")
 
 $('.badge').html(<%= @cart.line_items.count %>)

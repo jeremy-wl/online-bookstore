@@ -16,6 +16,35 @@
 
   <%= csrf_meta_tags %>
 
+  <style>
+      @media (max-width: 1122px) {
+          .navbar-header {
+              float: none;
+          }
+          .navbar-toggle {
+              display: block;
+          }
+          .navbar-collapse {
+              border-top: 1px solid transparent;
+              box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+          }
+          .navbar-collapse.collapse {
+              display: none!important;
+          }
+          .navbar-nav {
+              float: none!important;
+              margin: 7.5px -15px;
+          }
+          .navbar-nav>li {
+              float: none;
+          }
+          .navbar-nav>li>a {
+              padding-top: 10px;
+              padding-bottom: 10px;
+          }
+      }
+  </style>
+
 </head>
 
 <body class="<%= controller.controller_name %>">
@@ -24,7 +53,7 @@
 <!-- <p class="alert"><%= alert %></p> -->
 
 <!-- <div style="position:fixed;width:auto;margin-top:400px"><%= debug(params) if Rails.env.development? %></div> -->
-<div id="globalContainer" style="margin-top: 65px"> <!-- pull the div down so that the nav bar won't cover it -->
+<div id="globalContainer" style="position: relative; top: 50px;"> <!--  style="margin-top: 65px" if sth. gets covered by the navbar -->
     <header>
       <%= render "layouts/header" %>
     </header>

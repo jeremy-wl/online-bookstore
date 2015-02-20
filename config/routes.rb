@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   get 'categories/new'
 
   controller :dev_debugger do

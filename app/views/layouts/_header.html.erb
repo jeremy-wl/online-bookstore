@@ -15,11 +15,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav columns">
         <li><%= link_to 'Products', products_path %></li>
-<% if user_signed_in? %>
-  <% if current_user.try(:admin?) %>
-        <li><%= link_to 'All Users', users_path %></li>
-  <% end %>
-<% end %>
         <li><%= link_to 'Categories', categories_path %></li>
       </ul>
 
@@ -53,11 +48,13 @@
         <li><%= link_to 'Checkout', new_order_path, method: :get %></li>
 <% if user_signed_in? %>
         <li class='dropdown'>
-          <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>My Account <span class='caret'></span></a>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>Account <span class='caret'></span></a>
           <ul class='dropdown-menu' role='menu'>
             <% if current_user.try(:admin?) %>
                 <li><%= link_to "All Orders", orders_path %></li>
-            <% elsif user_signed_in? %>
+                <li><%= link_to 'All Users', users_path %></li>
+
+          <% elsif user_signed_in? %>
                 <li><%= link_to "My Orders", orders_path %></li>
             <% end %>
             <li class="divider"></li>

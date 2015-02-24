@@ -64,6 +64,7 @@ en:
 
     new:
       legend:       "Please Enter Your Details"
+      empty:        "Your cart is currently empty!"
 
   errors:
     template:

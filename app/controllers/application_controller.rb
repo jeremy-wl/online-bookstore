@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
 
   include StoreHelper
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to store_url, :alert => exception.message
+    puts 'hello'
+  end
+
   protected
 
     def set_i18n_locale_from_params
@@ -14,9 +19,9 @@ class ApplicationController < ActionController::Base
         if I18n.available_locales.map(&:to_s).include?(params[:locale])
           I18n.locale = params[:locale]
         else
-          flash.now[:notice] = 
+          flash.now[:danger] =
             "#{params[:locale]} translation not available"
-          logger.error flash.now[:notice]
+          logger.error flash.now[:danger]
         end
       end
     end

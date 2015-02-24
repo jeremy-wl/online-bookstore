@@ -235,7 +235,10 @@ ActiveAdmin.setup do |config|
   config.current_user_method = :current_user
 
   def authenticate_admin!
-    redirect_to store_url unless current_user.try(:admin?)
+    if !current_user.try(:admin?)
+      redirect_to store_url
+      flash[:danger] = 'You have no permission to access this page!'
+    end
   end
 
 end

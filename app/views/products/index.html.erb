@@ -1,25 +1,26 @@
-<h1>Listing products</h1>
+<div class="row" style="position: relative; right: 45px;">
+  <div class="col-md-9 col-md-offset-3">
+    <h1 align="center">Listing products</h1>
+    <% @products.each_slice(4) do |products| %>
+        <div class="row">
+          <% products.each do |product| %>
 
-<table>
-<% @products.each do |product| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td>
-      <%= image_tag(product.image_url, class: 'list_image') %>
-    </td>
-    <td class="list_description">
-      <dl>
-        <dt><%= product.title %></dt>
-        <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
-      </dl>
-    </td>
-    <td class="list_actions">
-      <%= link_to 'Show', product %><br/>
-      <%= link_to 'Edit', edit_product_path(product) %><br/>
-      <%= link_to 'Destroy', product, method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-    </td>
-  </tr>
-<% end %>
-</table>
-<br />
-<%= link_to 'New product', new_product_path %>
+              <div class="col-lg-3 col-md-6 col-xs-12 thumbnail">
+                <div class="row">
+                  <div class="col-xs-6" style="position: relative; left: 30px;">
+                    <%= link_to image_tag(product.image_url, size: '130x160', align: 'right'), product  %>
+                  </div>
+
+                  <div class="col-xs-6" style="position: relative; left: 5px;">
+                    <h5><%= link_to truncate(strip_tags(product.title), length: 45), product %></h5>
+                    <span class="lead"><%= "$#{product.price}" %></span>
+                    <%= button_to 'Add to cart', line_items_path(product_id: product.id), remote: true, class: 'btn btn-success' %>
+                  </div>
+                </div><br/>
+              </div>
+
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>

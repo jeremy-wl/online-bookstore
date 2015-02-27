@@ -1,3 +1,15 @@
+jQuery.expr[':'].Contains = function(a, i, m) {
+    return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+};
+
+jQuery.expr[':'].contains = function(a, i, m) {
+    return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+};
+var toggleActiveClass = function() {
+    $(".columns li:not('#sum')").hover(function() {
+        $(this).toggleClass("active");
+    });
+};
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -11,26 +23,13 @@
 // about supported directives.
 //
 
-//= require bootstrap
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/effect-blind
-//= require turbolinks
+//= require bootstrap
 //= require_tree .
 
 // This toggles the active class in the header
-
-jQuery.expr[':'].Contains = function(a, i, m) {
-    return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
-};
-jQuery.expr[':'].contains = function(a, i, m) {
-    return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
-};
-var toggleActiveClass = function() {
-    $(".columns li:not('#sum')").hover(function() {
-        $(this).toggleClass("active");
-    });
-};
 
 var toggleCartOnMouseEvents = function() {
     $("[data-toggle=popover]").hover(function() {

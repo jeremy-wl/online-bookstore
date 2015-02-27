@@ -11,5 +11,8 @@ Rails.application.config.assets.precompile += %w( bootstrap.css )
 
 Rails.application.config.assets.precompile += %w( bootstrap-responsive.css )
 
-Rails.application.config.assets.precompile += %w( bootstrap.js )
+Rails.application.config.assets.precompile += %w( jquery.js )
 
+Rails.application.config.assets.precompile += %w( jquery_ujs.js )
+
+Rails.application.config.assets.precompile += %w( bootstrap.js )

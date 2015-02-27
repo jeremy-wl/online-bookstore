@@ -42,6 +42,7 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'activeadmin', github: 'activeadmin'
+gem 'rails_12factor', group: :production
 # Use unicorn as the app server
 # gem 'unicorn'
 

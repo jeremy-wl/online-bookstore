@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapseExample">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -30,8 +30,9 @@
       <!--<%= a = "#{render 'layouts/footer'}".gsub!("\"", '\'') %>-->
 
       <ul class='nav navbar-nav navbar-right columns'>
-        <li data-container="body" title="My Shopping Cart" data-html="true" data-toggle="popover" data-placement="bottom"
-            data-content=''>
+
+
+        <li data-container="body" title="My Shopping Cart" data-toggle="collapse" data-target="#collapseExample">
           <%= link_to @cart do %>
               My Cart
               <% if @cart %>
@@ -45,6 +46,8 @@
         <% if @cart %>
             <li id="sum"><a><b><%= number_to_currency(@cart.total_price) %></b></a></li>
         <% end %>
+
+
         <li><%= link_to 'Checkout', new_order_path, method: :get %></li>
 <% if user_signed_in? %>
         <li class='dropdown'>
@@ -79,3 +82,10 @@
 <%= render template: 'modals/sign_in.html.erb' %>
 <!-- Sign up Modal Template-->
 <%= render template: 'modals/sign_up.html.erb' %>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#collapseExample">
+  Toggle cart
+</button>
+<div class="jumbotron collapse" id="collapseExample">
+  <%= render template: 'carts/show' %>
+</div>

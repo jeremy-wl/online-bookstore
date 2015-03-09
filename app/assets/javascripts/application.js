@@ -37,16 +37,25 @@ var toggleCartOnMouseEvents = function() {
     });
 };
 
-$(function() {
-    // $(".navbar-default .navbar-nav > li>a:contains('My Cart')")
-    toggleActiveClass();
-    toggleCartOnMouseEvents();
-    $('[data-toggle="tooltip"]').tooltip()
-
-})
+//$(function() {
+//    // $(".navbar-default .navbar-nav > li>a:contains('My Cart')")
+//    toggleActiveClass();
+//    toggleCartOnMouseEvents();
+//    $('[data-toggle="tooltip"]').tooltip()
+//
+//})
 
 // This fixes the $(document).ready() not loaded issue caused by turbolink
 $(document).on('page:load', function() {
     toggleActiveClass();
     toggleCartOnMouseEvents();
+});
+
+/* This disables the my cart link in the cart view. */
+$(function() {
+    if (document.URL.match(/\/carts\//)) {
+        var $a_tag = $("li>a:contains(My cart)");
+        $a_tag.attr("href", "#");
+        $a_tag.parent().removeAttr("data-toggle");
+    }
 });

@@ -12,19 +12,19 @@
     <% end %>
 
 <div class="row">
-  <div class="form-group col-lg-6">
+  <div class="form-group">
     <%= f.label :name, t('.name') %><br>
     <%= f.text_field :name, size: 40, class: 'form-control' %>
   </div>
-  <div class="form-group col-lg-6">
+  <div class="form-group">
     <%= f.label :address, t('.address') %><br>
     <%= f.text_area :address, rows: 3, cols: 40, class: 'form-control' %>
   </div>
-  <div class="form-group col-lg-6">
+  <div class="form-group">
     <%= f.label :email, t('.email') %><br>
     <%= f.email_field :email, size: 40, class: 'form-control' %>
   </div>
-  <div class="form-group col-lg-6">
+  <div class="form-group">
     <%= f.label :pay_type, t('.pay_type') %><br>
     <%= f.select :pay_type, Order::PAYMENT_TYPES,
                  {prompt: t('.pay_prompt')}, {class: 'form-control'} %>

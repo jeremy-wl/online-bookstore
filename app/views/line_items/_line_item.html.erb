@@ -3,11 +3,12 @@
 <% else %>
 	<tr>
 <% end %>
-		<td><%= line_item.quantity %>&times;</td>
-		<td><%= line_item.product.title %></td>
-		<td class="line_item_price" align="right"><%= number_to_currency(line_item.total_price) %></td>
+        <td !important style="vertical-align: middle"><%= link_to image_tag(line_item.product.image_url, size: '54x70'), line_item.product %></td>
+		<td !important style="vertical-align: middle"><%= line_item.product.title %></td>
+        <td !important style="vertical-align: middle" class="line_item_price"><%= number_to_currency(line_item.total_price) %></td>
+        <td !important style="vertical-align: middle"><%= line_item.quantity %></td>
 		<% if @cart %>
-		<td><%= button_to "X", line_item, method: :delete, remote: true, class:"btn-danger",
+		<td !important style="vertical-align: middle"><%= button_to 'Delete', line_item, method: :delete, remote: true, class:"btn btn-danger",
 											:disabled => !@order.nil? %></td>
 		<% end %>
 	</tr>

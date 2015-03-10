@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   include CurrentCart
-  before_action :set_cart,  only: [:index]
+  before_action :set_cart,  only: [:index, :show]
   load_and_authorize_resource
   before_action :set_product, only: [:show, :edit, :update, :destroy] # We won't be able to get the instance variable of "@product" if this line is omitted, thus incurring errors such as "undefined method 'title' in the SHOW ACTION".
 

@@ -31,19 +31,17 @@ var toggleActiveClass = function() {
 
 // This toggles the active class in the header
 
-var toggleCartOnMouseEvents = function() {
-    $("[data-toggle=popover]").hover(function() {
-        $(this).popover('show');
-    });
-};
+//var toggleCartOnMouseEvents = function() {
+//    $("[data-toggle=popover]").hover(function() {
+//        $(this).popover('show');
+//    });
+//};
 
-//$(function() {
-//    // $(".navbar-default .navbar-nav > li>a:contains('My Cart')")
-//    toggleActiveClass();
-//    toggleCartOnMouseEvents();
-//    $('[data-toggle="tooltip"]').tooltip()
-//
-//})
+$(function() {
+    // $(".navbar-default .navbar-nav > li>a:contains('My Cart')")
+    toggleActiveClass();
+    //toggleCartOnMouseEvents();
+})
 
 // This fixes the $(document).ready() not loaded issue caused by turbolink
 $(document).on('page:load', function() {

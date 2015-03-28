@@ -44,6 +44,8 @@ gem 'cancancan'
 gem 'activeadmin', github: 'activeadmin'
 gem 'rails_12factor', group: :production
 gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use unicorn as the app server
 # gem 'unicorn'
 

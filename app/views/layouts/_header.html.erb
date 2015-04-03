@@ -32,7 +32,7 @@
       <ul class='nav navbar-nav navbar-right columns'>
 
 
-        <li data-container="body" title="My Shopping Cart" data-toggle="collapse" data-target="#collapseExample">
+        <li>
           <%= link_to @cart do %>
               My Cart
               <% if @cart %>
@@ -83,9 +83,6 @@
 <!-- Sign up Modal Template-->
 <%= render template: 'modals/sign_up.html.erb' %>
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#collapseExample">
-  Toggle cart
-</button>
 <div class="jumbotron collapse" id="collapseExample">
   <%= render template: 'carts/show' %>
 </div>

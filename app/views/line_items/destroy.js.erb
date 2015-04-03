@@ -1,6 +1,7 @@
-if ( <%= @cart.line_items.empty? %> ) { $('#cart').hide('blind', 1000); }
-
-$('#cart').html("<%= escape_javascript render(:template => 'carts/show') %>");
+if ( <%= @cart.line_items.empty? %> )
+    window.location.replace("<%= store_url %>");
+else
+    $('div #cart').html("<%= escape_javascript render(:template => 'carts/show') %>");
 
 $('#sum a').html("<b><%= number_to_currency(@cart.total_price) %></b>")
 

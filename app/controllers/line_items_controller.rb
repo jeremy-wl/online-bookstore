@@ -61,6 +61,7 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1.json
   def destroy
     @line_item.destroy
+    flash[:info] = 'Your cart just got emptied, go get some more books!' if @line_item.cart.line_items.empty?
     respond_to do |format|
       format.html { redirect_to store_url }
       format.json { head :no_content }

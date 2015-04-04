@@ -16,3 +16,9 @@ Rails.application.config.assets.precompile += %w( jquery.js )
 Rails.application.config.assets.precompile += %w( jquery_ujs.js )
 
 Rails.application.config.assets.precompile += %w( bootstrap.js )
+
+Rails.application.config.assets.precompile += %w( d3.js )
+
+Rails.application.config.assets.precompile += %w( d3.layout.cloud.js )
+
+Rails.application.config.assets.precompile += %w( index.js )

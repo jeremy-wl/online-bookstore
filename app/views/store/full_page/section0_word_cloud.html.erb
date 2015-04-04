@@ -1,0 +1,50 @@
+<h1 id="wordCloud" style="margin-top: -5%"></h1>
+
+<h2>
+    <%= render :template => 'modals/welcome' %>
+</h2>
+
+<script>
+    var fill = d3.scale.category20();
+
+    <% books = [] %>
+
+    <% Product.all.take(20).each do |p| %>
+
+    <% p.title.split(' ').each { |word| books.push(word) } %>
+
+    <% end %>
+
+    var books = <%= raw books.to_json %>
+
+
+            d3.layout.cloud().size([1500, 800])
+                    .words(books.map(function(d) {
+                        return {text: d, size: 10 + Math.random() * 60};
+                    }))
+                    .padding(5)
+                    .rotate(function(d) { return ~~(Math.random() * 5) * 30 - 45; })
+                    .font("Impact")
+                    .fontSize(function(d) { return d.size; })
+                    .on("end", draw)
+                    .start();
+
+    function draw(words) {
+        d3.select("#wordCloud").append("svg")
+                .attr("width", 1300)
+                .attr("height", 800)
+                .append("g")
+                .attr("transform", "translate(650,350)")
+                .selectAll("text")
+                .data(words)
+                .enter().append("text")
+                .style("font-size", function(d) { return d.size + "px"; })
+                .style("font-family", "Impact")
+                .style("fill", function(d, i) { return fill(i); })
+                .attr("text-anchor", "middle")
+                .attr("transform", function(d) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                .text(function(d) { return d.text; });
+    }
+</script>

@@ -14,10 +14,6 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  controller :showcase do
-    get '/showcase' => :index
-  end
-
   devise_for :users
 
   resources :orders

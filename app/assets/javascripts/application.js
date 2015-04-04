@@ -41,13 +41,10 @@ $(function() {
     // $(".navbar-default .navbar-nav > li>a:contains('My Cart')")
     toggleActiveClass();
     //toggleCartOnMouseEvents();
+    $('#welcomeModal').modal('show'); // popup the welcome modal on page load
+    $('h2').delay(3000).fadeOut('slow'); // fade it out after 3 sec
+    //.modal('hide').delay(8000);
 })
-
-// This fixes the $(document).ready() not loaded issue caused by turbolink
-$(document).on('page:load', function() {
-    toggleActiveClass();
-    toggleCartOnMouseEvents();
-});
 
 /* This disables the my cart link in the cart view. */
 $(function() {

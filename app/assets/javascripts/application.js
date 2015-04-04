@@ -43,5 +43,8 @@ $(function() {
     //toggleCartOnMouseEvents();
     $('#welcomeModal').modal('show'); // popup the welcome modal on page load
     $('#welcome_modal').delay(3000).fadeOut('slow'); // fade it out after 3 sec
-    //.modal('hide').delay(8000);
+
+    setTimeout(function() {
+        $('body').removeAttr('style');
+    }, 2000)
 })

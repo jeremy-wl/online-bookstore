@@ -1,8 +1,11 @@
+<%= javascript_include_tag 'd3.layout.cloud', 'data-turbolinks-track' => true  %>
+
 <h1 id="wordCloud" style="margin-top: -5%"></h1>
 
-<h2 id='welcome_modal'>
-    <%= render :template => 'modals/welcome' %>
+<h2 id='welcome_modal' align="center">
+  <%= render :template => 'modals/welcome' %>
 </h2>
+
 
 <script>
     var fill = d3.scale.category20();
@@ -16,6 +19,7 @@
     <% end %>
 
     var books = <%= raw books.to_json %>
+
 
 
             d3.layout.cloud().size([1500, 800])

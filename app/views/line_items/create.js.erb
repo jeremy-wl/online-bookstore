@@ -10,3 +10,9 @@ $('#current_item').css({'background-color':'#B8B8B8'}).
 $('#sum a').html("<b><%= number_to_currency(@cart.total_price) %></b>") // Ajaxify the sum in the banner
 
 $('.badge').html(<%= @cart.line_items.count %>)
+
+$('#my_cart').addClass("active");
+
+setTimeout(function() {
+    $('#my_cart').removeClass("active");
+}, 2000)

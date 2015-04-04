@@ -42,15 +42,6 @@ $(function() {
     toggleActiveClass();
     //toggleCartOnMouseEvents();
     $('#welcomeModal').modal('show'); // popup the welcome modal on page load
-    $('h2').delay(3000).fadeOut('slow'); // fade it out after 3 sec
+    $('#welcome_modal').delay(3000).fadeOut('slow'); // fade it out after 3 sec
     //.modal('hide').delay(8000);
 })
-
-/* This disables the my cart link in the cart view. */
-$(function() {
-    if (document.URL.match(/\/carts\//)) {
-        var $a_tag = $("li>a:contains(My cart)");
-        $a_tag.attr("href", "#");
-        $a_tag.parent().removeAttr("data-toggle");
-    }
-});

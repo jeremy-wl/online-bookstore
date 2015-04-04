@@ -6,3 +6,9 @@ else
 $('#sum a').html("<b><%= number_to_currency(@cart.total_price) %></b>")
 
 $('.badge').html(<%= @cart.line_items.count %>)
+
+$('#my_cart').addClass("active");
+
+setTimeout(function() {
+    $('#my_cart').removeClass("active");
+}, 2000)

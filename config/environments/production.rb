@@ -85,13 +85,12 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       address:              "smtp.163.com",
       port:                  25,
-      domain:                "http://www.huangwenlin.com",
       authentication:        "plain",
       user_name:             "huangwenlin_test",
       password:              "huangwenlin123",
       enable_starttls_auto:  true
   }
 
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { :host => 'www.huangwenlin.com' }
   
 end

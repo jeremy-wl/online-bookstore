@@ -13,11 +13,15 @@
         $('#fullpage').fullpage({
             'verticalCentered': false,
             'css3': true,
-            'sectionsColor': ['#000', '#fff', '#fff', '#fff'],
+            'sectionsColor': ['#000', '#051846', '#000', '#fff'],
             'navigation': true,
             'navigationPosition': 'right',
-            'navigationTooltips': ['Store Word Cloud', '#2', '#3', '#4']
+            'navigationTooltips': ['Store Word Cloud', 'Web App Language Details', '#3']
         });
+
+        setTimeout(function () {
+            $('div .alert').remove();
+        }, 2000);
     });
 </script>
 

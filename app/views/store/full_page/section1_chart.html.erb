@@ -14,13 +14,63 @@
 <style>
     .bubbleChart {
         min-width: 100px;
-        max-width: 100%;
+        max-width: 80%;
         height: 100%;
+        position: relative;
+        left: 10%;
+        bottom: 2%;
     }
     .bubbleChart svg{
         background: rgba(5, 24, 70, 0.36);
     }
+    .bubbleChart span {
+        color: white;
+        font-size: large;
+        position: relative;
+        top: 20%;
+    }
 </style>
 
 <div class="bubbleChart">
+    <span>
+        <span class='span2'>
+            作为 Rails 的开发语言，Ruby 在开发中的比例自然占据着举足轻重的位置, Rails 发展十年来成为今天敏捷开发的首选框架，其中离不开 Ruby 语言本身灵活、简洁的特性。
+        </span>
+    </span>
 </div>
+
+<script>
+    $(function() {
+        $('.Ruby').on('click', function() {
+            $('.bubbleChart span .span2').text(
+                    '作为 Rails 的开发语言，Ruby 在开发中的比例自然占据着举足轻重的位置, ' +
+                    'Rails 发展十年来成为今天敏捷开发的首选框架，其中离不开 Ruby 语言' +
+                    '本身灵活、简洁的特性。');
+        })
+        $('.CSS').on('click', function() {
+            $('.bubbleChart span .span2').text(
+                    '本系统由于大量采用 Bootstrap 的静态 CSS 样式，' +
+                    '所以 4％ 的比例大多数来自 bootstrap.css 这一个库，' +
+                    '极少数源于 html 中的 style 标签。');
+        })
+        $('.JavaScript').on('click', function() {
+            $('.bubbleChart span .span2').text('' +
+            '现代的网页应用若需要友好的用户交互则离不开适当 JavaScript 的运用。' +
+            '本系统运用了多个优秀的第三方 JS 库，包括 Bootstrap、jQuery、D3.js 等，' +
+            '大大增强了界面的友好程度。');
+        })
+        $('.HTML').on('click', function() {
+            $('.bubbleChart span .span2').text(
+                    '任何一种网页应用开发技术都离不开 HTML 的支持。' +
+                    '而 Rails 中可在 html 文件后加上 .erb 后缀使该视图文件中能够被嵌入 Ruby 片段，' +
+                    '从而使服务器返回数据渲染出静态页面。');
+        })
+        $('.CoffeeScript').on('click', function() {
+            $('.bubbleChart span .span2').text(
+                    'CoffeeScript 是一套 JavaScript 的预编译语言。' +
+                    '它会将类似 Ruby 语法的代码最终编译成 JavaScript，' +
+                    '但在开发过程中能大大提高代码的可读性和开发效率。' +
+                    '本系统中的 CoffeeScript 主要被运用于 Rails 的 各个 Ajax 脚本中。');
+        })
+    })
+</script>

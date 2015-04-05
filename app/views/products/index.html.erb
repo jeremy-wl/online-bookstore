@@ -3,7 +3,10 @@
 
     <%= will_paginate %>
 
-    <h1 align="center">Listing products</h1>
+    <h1 class="text-center">
+      <span class="glyphicon glyphicon-hand-down">   Listing products</span>
+    </h1>
+    <hr/>
     <% @products.each_slice(4) do |products| %>
         <div class="row">
           <% products.each do |product| %>
@@ -30,4 +33,3 @@
 
   </div>
 </div>
-p

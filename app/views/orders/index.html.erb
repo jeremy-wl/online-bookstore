@@ -1,6 +1,10 @@
-<h1>Listing orders</h1>
+<% if current_user.admin? %>
+    <h1 class="text-center"><span class="glyphicon glyphicon-hand-down">   All orders</span></h1>
+<% else %>
+    <h1 class="text-center"><span class="glyphicon glyphicon-hand-down">   Your orders</span></h1>
+<% end %>
 
-<table>
+<table class="table table-hover table-striped">
   <thead>
     <tr>
       <th></th>
@@ -9,7 +13,10 @@
   </thead>
 
   <tbody>
-    <% @orders.each do |order| %>
+    <% @orders.each_with_index do |order, index| %>
+      <tr>
+        <th><%= "# #{index + 1}" %></th>
+      </tr>
       <tr>
         <th>Name</th>
         <td><%= order.name %></td>
@@ -27,24 +34,23 @@
         <td><%= order.pay_type %></td>
       </tr>
       <tr>
-        <th>Products Ordered</th>
+        <th>Products Ordered: </th>
         <%= render order.line_items %>
       </tr>
       <tr>
         <th>Ordered at</th>
         <td><%= order.created_at %></td>
       </tr>
+      <th></th>
         <% if current_user.admin? %>
           <td><%= link_to 'Show', order %></td>
           <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <% end %>
 
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %><br><br></td>
+        <td align="right"><%= link_to 'Delete this order', order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %><br><br></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Order', new_order_path %>
+<hr/>

@@ -12,10 +12,10 @@
         $('#fullpage').fullpage({
             'verticalCentered': false,
             'css3': true,
-            'sectionsColor': ['#000', '#051846', '#000', '#fff'],
+            'sectionsColor': ['#000', '#051846', '#737373'],
             'navigation': true,
             'navigationPosition': 'right',
-            'navigationTooltips': ['Store Word Cloud', 'Web App Language Details', '#3']
+            'navigationTooltips': ['Store Word Cloud', 'Web App Language Details', 'Enjoy!']
         });
 
         setTimeout(function () {
@@ -29,8 +29,6 @@
     <% message_type = 'danger' if message_type == 'alert' %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
-
-<%- # render 'store/carousel' -%>
 
 <style>
 
@@ -61,7 +59,10 @@
   </div>
 
   <div class="section" id="section2">
-
+    <%= render 'store/carousel' %>
+    <h1 style="position: relative; top: 35%" align="center">
+      Now enjoy your stay @ <kbd><%= link_to 'Jeremy\'s Bookstore', products_path %></kbd> :D
+    </h1>
   </div>
 
 </div>

@@ -9,6 +9,6 @@
         <td !important style="vertical-align: middle"><%= line_item.quantity %></td>
 		<% if @cart %>
 		<td !important style="vertical-align: middle"><%= button_to 'Delete', line_item, method: :delete, remote: true, class:"btn btn-danger",
-											:disabled => !@order.nil? %></td>
+											:disabled => !@order.nil? || params[:controller] == 'orders' %></td>
 		<% end %>
 	</tr>

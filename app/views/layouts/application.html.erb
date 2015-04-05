@@ -84,6 +84,8 @@
             var column = regex.exec(url)[0];
             $("li:contains(" + column + ")").addClass("active");
         }
+        if (document.URL.indexOf('orders/new') > -1)
+            $("li:contains('Checkout')").addClass("active");
     }
     activateActiveClass();
 </script>

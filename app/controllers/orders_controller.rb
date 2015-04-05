@@ -9,9 +9,9 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     if current_user.admin?
-      @orders = Order.all
+      @orders = Order.order('created_at DESC')
     else
-      @orders = current_user.orders
+      @orders = current_user.orders.order('created_at DESC')
     end
   end
 

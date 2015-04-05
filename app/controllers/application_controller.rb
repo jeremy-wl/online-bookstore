@@ -9,8 +9,12 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to store_url, :alert => exception.message
-    puts 'hello'
   end
+
+  rescue_from ActionView::Template::Error do
+      redirect_to store_url, :alert => 'Invalid Registration'
+  end
+
 
   protected
 

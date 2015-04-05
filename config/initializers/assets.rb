@@ -8,19 +8,15 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( bootstrap.css )
-
 Rails.application.config.assets.precompile += %w( bootstrap-responsive.css )
-
+Rails.application.config.assets.precompile += %w( bubble_chart_fonts.css )
 Rails.application.config.assets.precompile += %w( jquery.js )
-
 Rails.application.config.assets.precompile += %w( jquery_ujs.js )
-
 Rails.application.config.assets.precompile += %w( bootstrap.js )
-
 Rails.application.config.assets.precompile += %w( d3.js )
-
 Rails.application.config.assets.precompile += %w( d3.layout.cloud.js )
-
 Rails.application.config.assets.precompile += %w( index.js )
-
 Rails.application.config.assets.precompile += %w( bubble_chart.js )
+Rails.application.config.assets.precompile += %w( jquery.fullPage.css )
+Rails.application.config.assets.precompile += %w( jquery.fullPage.js )
+Rails.application.config.assets.precompile += %w( d3_bubble_chart/central-click.js )

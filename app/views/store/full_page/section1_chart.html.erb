@@ -1,4 +1,4 @@
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+<%= stylesheet_link_tag 'bubble_chart_fonts', media: 'all' %>
 
 <script src="http://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
 <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
@@ -6,7 +6,7 @@
 <script src="http://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
 <script src="http://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
 <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
-<script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
+<%= javascript_include_tag 'd3_bubble_chart/central-click', 'data-turbolinks-track' => true  %>
 <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
 
 <%= javascript_include_tag 'bubble_chart', 'data-turbolinks-track' => true  %>

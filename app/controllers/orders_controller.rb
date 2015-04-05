@@ -50,7 +50,7 @@ class OrdersController < ApplicationController
           session[:cart_id] = nil
         end
         
-        OrderNotifier.shipped(@order).deliver
+        OrderNotifier.shipped(@order).deliver_now
 
         format.html { redirect_to store_url, notice: t(".thanks") }
         format.json { render :show, status: :created, location: @order }

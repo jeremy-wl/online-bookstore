@@ -83,13 +83,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-         address:              "smtp.gmail.com",
-         port:                  587,
-         domain:                "online-bookstore.herokuapp.com",
-         authentication:        "plain",
-         user_name:             "linlin.huangwenlin",
-         password:              "huangwenlin0805",
-         enable_starttls_auto:  true
+      address:              "smtp.163.com",
+      port:                  25,
+      domain:                "http://www.huangwenlin.com",
+      authentication:        "plain",
+      user_name:             "huangwenlin_test",
+      password:              "huangwenlin123",
+      enable_starttls_auto:  true
   }
 
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }

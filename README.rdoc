@@ -1,5 +1,0 @@
-This is an E-Commerce Rails App based on the sample app in Agile Web Development With Rails 4 book, which I'll use in my bachelor thesis.
-
-=========================================
-
-SITE DEVELOPMENT IN PROGRESS
